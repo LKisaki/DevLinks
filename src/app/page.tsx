@@ -34,7 +34,7 @@ export default function Home() {
           {/* Links */}
           <div className='p-6 gap-4 w-full lg:w-1/3'>
             <ul className='flex flex-col list-none gap-4'>
-              <Lilink href='https://plata-forma.vercel.app' text='PlataForma' />
+              <Lilink href='https://plataforma-luankisaki.vercel.app' text='PlataForma' />
               <Lilink href='#' text='Devlink' />
             </ul>
           </div>
