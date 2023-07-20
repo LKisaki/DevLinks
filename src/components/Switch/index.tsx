@@ -24,7 +24,7 @@ export default function Switch() {
         </span>
         <button
           id="darkMode"
-          className={`absolute rounded-full w-8 h-8 transition-all duration-500 z-10 hover:ring-2 hover:ring-[#000]/[.1] dark:hover:ring-[#FEFEFE]/[.5] dark:border dark:border-solid dark:border-[#ccc]
+          className={`absolute rounded-full w-8 h-8 transition-all duration-500 z-10 hover:ring-2 hover:ring-[#000]/[.1] dark:hover:ring-[#FEFEFE]/[.5] dark:border dark:border-solid dark:border-white/[.3]
         ${isSwitch ? "-left-1 bg-[#e8d400]" : "left-9 bg-[#050099]"}`}
         >
         </button>
