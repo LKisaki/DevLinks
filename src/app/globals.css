@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .animation-delay-2 {
-    animation-delay: 2s
-  }
-  .animation-delay-3 {
-    animation-delay: 3s
-  }
-}
-
 * {
   margin:0;
   padding:0;
@@ -22,6 +13,33 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
+}
+
+@layer utilities {
+  .animation-delay-2 {
+    animation-delay: 2s
+  }
+  .animation-delay-3 {
+    animation-delay: 3s
+  }
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .1);
+    border-radius: 100px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .1);
+    border-radius: 100px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, .1);
+  }
 }
 
 @media (prefers-color-scheme: dark) {

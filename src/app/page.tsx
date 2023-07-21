@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import avatar from '../assets/avatar_.png';
 import Switch from '@/components/Switch';
-import Lilink from '@/components/Li';
+import LiLinks from '@/components/LinkList/index';
 import SocialLinks from '@/components/SocialLinks';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { AiOutlineHeart } from 'react-icons/ai';
@@ -32,10 +32,9 @@ export default function Home() {
           </div>
           <Switch />
           {/* Links */}
-          <div className='p-6 gap-4 w-full lg:w-1/3'>
-            <ul className='flex flex-col list-none gap-4'>
-              <Lilink href='https://plataforma-luankisaki.vercel.app' text='PlataForma' />
-              <Lilink href='#' text='Devlink' />
+          <div className='p-6 gap-4 w-full overflow-x-auto scrollbar h-60 lg:w-1/3'>
+            <ul className='flex flex-col h-full list-none gap-4'>
+              <LiLinks />
             </ul>
           </div>
         </div>
