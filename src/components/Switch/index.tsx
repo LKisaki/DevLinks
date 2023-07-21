@@ -6,9 +6,9 @@ import { PiMoonStars, PiSun } from 'react-icons/pi';
 export default function Switch() {
   const [isSwitch, setIsSwitch] = useState(true)
 
-  useEffect(() => {
-    console.log("useEffect foi chamado")
-  }, [isSwitch])
+  // useEffect(() => {
+  //   console.log("useEffect foi chamado")
+  // }, [isSwitch])
   return (
     <>
       <html lang="pt-br" className={`${isSwitch ? "" : "dark"}`}/>
