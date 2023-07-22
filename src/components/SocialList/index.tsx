@@ -1,14 +1,12 @@
 import Link from "next/link";
-import SiBuymeacoffee from "react-icons/si"
 
-interface socialLinksProps {
+interface socialListProps {
   title: string
   target?: string
   href: string
   children: any
 }
-
-export default function SocialLinks(props: socialLinksProps) {
+export default function SocialList(props: socialListProps) {
   return (
     <Link
       target="_blank"

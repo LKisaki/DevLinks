@@ -1,13 +1,13 @@
-import Image from 'next/image';
-import avatar from '../assets/avatar_.png';
-import Switch from '@/components/Switch';
-import LiLinks from '@/components/LinkList/index';
-import SocialLinks from '@/components/SocialLinks';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { SiBuymeacoffee, SiLinktree } from 'react-icons/si';
 import Link from 'next/link';
+import Image from 'next/image';
+import Switch from '@/components/Switch';
+import avatar from '../assets/avatar_.png';
+import { AiOutlineHeart } from 'react-icons/ai';
+import SocialList from '@/components/SocialList';
 import Background from '@/components/Background';
+import LiLinks from '@/components/LinkList/index';
+import { SiBuymeacoffee, SiLinktree } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -40,21 +40,21 @@ export default function Home() {
         </div>
         {/* Social Links */}
         <div className='flex items-center justify-around gap-4 py-6'>
-          <SocialLinks title={'Github'} href={'https://github.com/LKisaki'} >
+          <SocialList title={'Github'} href={'https://github.com/LKisaki'} >
             <FaGithub />
-          </SocialLinks>
-          <SocialLinks title={'Linkedin'} href={'https://linkedin.com/in/luankisaki/'} >
+          </SocialList>
+          <SocialList title={'Linkedin'} href={'https://linkedin.com/in/luankisaki/'} >
             <FaLinkedin />
-          </SocialLinks>
-          <SocialLinks title={'Instagram'} href={'https://instagram.com/luankisaki.dev/'} >
+          </SocialList>
+          <SocialList title={'Instagram'} href={'https://instagram.com/luankisaki.dev/'} >
             <FaInstagram />
-          </SocialLinks>
-          <SocialLinks title={'Lintkree'} href={'https://linktr.ee/luankisaki'} >
+          </SocialList>
+          <SocialList title={'Lintkree'} href={'https://linktr.ee/luankisaki'} >
             <SiLinktree />
-          </SocialLinks>
-          <SocialLinks title={'Buymeacoffee'} href={'https://buymeacoffee.com/luankisaki'} >
+          </SocialList>
+          <SocialList title={'Buymeacoffee'} href={'https://buymeacoffee.com/luankisaki'} >
             <SiBuymeacoffee />
-          </SocialLinks>
+          </SocialList>
         </div>
         {/* Footer */}
         <div className='flex items-center w-full justify-center py-6'>
