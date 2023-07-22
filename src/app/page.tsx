@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import Switch from '@/components/Switch';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 import avatar from '../assets/avatar_.png';
 import { AiOutlineHeart } from 'react-icons/ai';
 import SocialList from '@/components/SocialList';
@@ -30,7 +30,7 @@ export default function Home() {
               @luankisaki.dev
             </span>
           </div>
-          <Switch />
+          {/* <ThemeSwitcher /> */}
           {/* Links */}
           <div className='p-6 gap-4 w-full overflow-x-auto scrollbar h-60 lg:w-1/3'>
             <ul className='flex flex-col h-full list-none gap-4'>
