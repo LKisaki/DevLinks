@@ -40,7 +40,7 @@ export default function Home() {
         </div>
         {/* Social Links */}
         <div className='flex items-center justify-around gap-4 py-6'>
-          <SocialList title={'Github'} href={'https://github.com/LKisaki'} >
+          <SocialList title={'Github'} href={'https://github.com/LuanKisaki'} >
             <FaGithub />
           </SocialList>
           <SocialList title={'Linkedin'} href={'https://linkedin.com/in/luankisaki/'} >
