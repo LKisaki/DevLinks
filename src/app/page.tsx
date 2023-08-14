@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import Image from 'next/image';
-import avatar from '@/assets/avatar_.png'
+// import avatar from '@/assets/avatar_.png'
 import { AiOutlineHeart } from 'react-icons/ai';
 import SocialList from '@/components/SocialList';
 import Background from '@/components/Background';
@@ -27,7 +27,7 @@ export default function Home() {
         // console.log(user.avatar)
         // console.log(user.name)
       });
-    console.log("useEffect chamado")
+    // console.log("useEffect chamado")
 
   }, [user.avatar, user.name]);
   return (
@@ -41,13 +41,12 @@ export default function Home() {
               target='blank'
             >
               <Image
+                unoptimized
+                priority
                 src={user.avatar}
-                // src={avatar}
                 alt={user.name}
                 width={112}
                 height={112}
-                unoptimized
-                priority
               />
             </a>
           </div>
