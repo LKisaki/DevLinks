@@ -1,14 +1,15 @@
 import { bgObjs } from "./BackgroundObject"
 
 type backgroundProps = {
+  id?: number
   width?: string
   height?: string
   vertical?: string
   horizontal?: string
-  widthLg?: string
-  heightLg?: string
-  verticalLg?: string
-  horizontalLg?: string
+  widthLargeScreen?: string
+  heightLargeScreen?: string
+  verticalLargeScreen?: string
+  horizontalLargeScreen?: string
   animationDelay?: string
   color?: string
 }
@@ -17,7 +18,14 @@ export default function Background(props: backgroundProps) {
   const bgObjects = bgObjs.map(bgObj =>
     <div
       key={bgObj.id}
-      className={`select-none -z-10 absolute rounded-full mix-blend-multiply filter blur-[70px] lg:blur-[110px] animate-blob animation-delay-${bgObj.animationDelay} w-${bgObj.width} h-${bgObj.height} ${bgObj.vertical} ${bgObj.horizontal} lg:w-${bgObj.widthLg} lg:h-${bgObj.heightLg} lg:${bgObj.verticalLg} lg:${bgObj.horizontalLg} bg-${bgObj.color}`}></div>
+      className={`absolute -z-10 rounded-full mix-blend-multiply filter blur-[70px] lg:blur-[120px] animate-blob
+        animation-delay-${bgObj.animationDelay} w-${bgObj.width} h-${bgObj.height} ${bgObj.vertical} ${bgObj.horizontal} lg:w-${bgObj.widthLargeScreen} lg:h-${bgObj.heightLargeScreen} lg:${bgObj.verticalLargeScreen} lg:${bgObj.horizontalLargeScreen} bg-${bgObj.color}`}
+    ></div>
+
   )
-  return (<>{bgObjects}</>)
+  return (
+    <>
+      {bgObjects}
+    </>
+    )
 }
