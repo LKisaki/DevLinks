@@ -1,36 +1,65 @@
+'use client'
 import Link from 'next/link';
 import Image from 'next/image';
-import ThemeSwitcher from '@/components/ThemeSwitcher';
-import avatar from '../assets/avatar_.png';
+import avatar from '@/assets/avatar_.png'
 import { AiOutlineHeart } from 'react-icons/ai';
 import SocialList from '@/components/SocialList';
 import Background from '@/components/Background';
 import LiLinks from '@/components/LinkList/index';
 import { SiBuymeacoffee, SiLinktree } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { ComponentProps, useEffect, useState } from 'react';
 
 export default function Home() {
+  const [user, setUser] = useState({ name: '', avatar: '', login: '' });
+
+  useEffect(() => {
+  fetch(`https://api.github.com/users/luankisaki`)     // provides a api interface
+      .then(response => response.json())               // convert datas for json
+      .then(data => {                                  // receiver datas in "data"     
+        setUser({                                      // edit my created states for a receive values
+          name: data.name,
+          avatar: data.avatar_url,
+          login: data.login
+        })
+        // console.log(data.avatar_url)
+        // console.log(data.name)
+        // console.log(user.avatar)
+        // console.log(user.name)
+      });
+    console.log("useEffect chamado")
+
+  }, [user.avatar, user.name]);
   return (
     <>
-      <main className="flex min-h-screen w-full flex-col items-center justify-center p-12 select-none">
       <Background />
+      <main className="flex min-h-screen w-full flex-col items-center justify-center p-12 select-none">
         <div className='flex flex-col gap-2 items-center justify-center w-full'>
-          <div className='flex items-center justify-center h-[112px]'>
-            <Image
-              src={avatar}
-              alt='uma foto de avatar'
-              objectFit='cover'
-              width={112}
-              height={112}
-              priority={true}
-            />
+          <div className='flex items-center justify-center h-[112px] w-[112px]'>
+            <a 
+              href={`https://github.com/${user.login}`}
+              target='blank'
+            >
+              <Image
+                src={user.avatar}
+                // src={avatar}
+                alt={user.name}
+                width={112}
+                height={112}
+                unoptimized
+                priority
+              />
+            </a>
           </div>
           <div>
-            <span className='font-medium text-base'>
+            <a 
+              href="https://instagram.com/luankisaki.dev/"
+              className='font-medium text-base'
+              target='blank'
+            >
               @luankisaki.dev
-            </span>
+            </a>
           </div>
-          {/* <ThemeSwitcher /> */}
           {/* Links */}
           <div className='p-6 gap-4 w-full overflow-x-auto scrollbar h-60 lg:w-1/3'>
             <ul className='flex flex-col h-full list-none gap-4'>
