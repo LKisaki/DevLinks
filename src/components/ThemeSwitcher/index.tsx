@@ -1,11 +1,9 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PiMoonStars, PiSun } from 'react-icons/pi'
 
-
-
 export default function ThemeSwitcher() {
-  const [isDark, setIsDark] = useState(true)
+  const [dark, setDark] = useState(true)
 
   // useEffect(() => {
   //   if(typeof window !== 'undefined') { 
@@ -14,25 +12,22 @@ export default function ThemeSwitcher() {
   //   }
   //   // console.log("useEffect foi chamado")
   //   // setIsDark(true)
-  // }, [])
+  // }, []) 
   return (
     <>
-      {/* <html className={`${theme ? "" : "dark"}`}/> */}
+      <html
+        className={`${dark ? '' : 'dark'}`}
+      />
       <div
-        onClick={() => setIsDark(!isDark)}
-        className='relative flex w-16 h-10 items-center'
+        onClick={() => setDark(!dark)}
+        className='relative flex w-16 h-10 items-center cursor-pointer'
       >
-        <span className={`absolute flex ml-1 justify-center cursor-pointer items-center border-black/[.5] z-20`}>
-          <PiSun />
-        </span>
-        <span className={`absolute flex right-0 mr-1 justify-center cursor-pointer items-center border-black/[.5] z-20`}>
-          <PiMoonStars />
-        </span>
         <button
           id="darkMode"
           className={`absolute rounded-full w-8 h-8 transition-all duration-500 z-10 hover:ring-2 hover:ring-[#000]/[.1] dark:hover:ring-[#FEFEFE]/[.5] dark:border dark:border-solid dark:border-white/[.3]
-        ${isDark ? "-left-1 bg-[#e8d400]" : "left-9 bg-[#050099]"}`}
+        ${dark ? "-left-1 bg-[#e8d400]" : "left-9 bg-[#050099]"}`}
         >
+          {dark ? <PiSun className="m-auto transition-all" /> : <PiMoonStars className="m-auto transition-all" />}
         </button>
         <span className='block w-full h-6 bg-black/[.1] rounded-full border border-solid border-black/[.1] dark:border-white/[.1] dark:bg-white/[.1]'>
         </span>
