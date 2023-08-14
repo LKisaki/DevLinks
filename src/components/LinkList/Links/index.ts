@@ -9,5 +9,10 @@ export const lilinks = [
     href: '#',
     text: 'Devlink'
   },
+  {
+    id: 2,
+    href: 'https://loginnextjs-luankisaki.vercel.app/',
+    text: 'Login Nextjs'
+  },
   
 ]
