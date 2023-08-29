@@ -1,4 +1,4 @@
-'use client'
+
 import Link from 'next/link';
 import Image from 'next/image';
 // import avatar from '@/assets/avatar_.png'
@@ -10,48 +10,41 @@ import { SiBuymeacoffee, SiLinktree } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { ComponentProps, useEffect, useState } from 'react';
 
-export default function Home() {
-  const [user, setUser] = useState({ name: '', avatar: '', login: '' });
+async function getData() {
+  // useEffect(() => {
+  const res = await fetch(`https://api.github.com/users/luankisaki`)     // provides a api interface
 
-  useEffect(() => {
-  fetch(`https://api.github.com/users/luankisaki`)     // provides a api interface
-      .then(response => response.json())               // convert datas for json
-      .then(data => {                                  // receiver datas in "data"     
-        setUser({                                      // edit my created states for a receive values
-          name: data.name,
-          avatar: data.avatar_url,
-          login: data.login
-        })
-        // console.log(data.avatar_url)
-        // console.log(data.name)
-        // console.log(user.avatar)
-        // console.log(user.name)
-      });
-    // console.log("useEffect chamado")
+  if (!res.ok) {
+    throw new Error('Deu ruim o fetch')
+  }
+  return res.json()
+}
 
-  }, [user.avatar, user.name]);
+export default async function Home() {
+  const data = await getData()
+
   return (
     <>
       <Background />
       <main className="flex min-h-screen w-full flex-col items-center justify-center p-12 select-none">
         <div className='flex flex-col gap-2 items-center justify-center w-full'>
           <div className='flex items-center justify-center h-[112px] w-[112px]'>
-            <a 
-              href={`https://github.com/${user.login}`}
+            <a
+              href={`https://github.com/${data.login}`}
               target='blank'
             >
               <Image
                 unoptimized
                 priority
-                src={user.avatar}
-                alt={user.name}
+                src={`https://github.com/${data.login}.png`}
+                alt={data.name}
                 width={112}
                 height={112}
               />
             </a>
           </div>
           <div>
-            <a 
+            <a
               href="https://instagram.com/luankisaki.dev/"
               className='font-medium text-base'
               target='blank'
