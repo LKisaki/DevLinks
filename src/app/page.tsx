@@ -8,7 +8,6 @@ import Background from '@/components/Background';
 import LiLinks from '@/components/LinkList/index';
 import { SiBuymeacoffee, SiLinktree } from 'react-icons/si';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { ComponentProps, useEffect, useState } from 'react';
 
 async function getData() {
   // useEffect(() => {
