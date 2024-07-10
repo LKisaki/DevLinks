@@ -6,18 +6,17 @@ export const lilinks = [
   },
   {
     id: 1,
-    href: '#',
-    text: 'Devlinks'
+    href: 'https://notes-luankisaki.vercel.app/',
+    text: 'Notes'
   },
   {
     id: 2,
-    href: 'https://notes-luankisaki.vercel.app/',
-    text: 'Notes'
+    href: 'https://luankisaki.github.io/Gerador-de-dezenas/',
+    text: 'Gerador de dezenas'
   },
   {
     id: 3,
     href: 'https://loginnextjs-luankisaki.vercel.app/',
     text: 'Login Nextjs'
   },
-  
 ]

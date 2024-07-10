@@ -27,29 +27,30 @@ export default async function Home() {
       <Background />
       <main className="flex min-h-screen w-full flex-col items-center justify-center p-12 select-none">
         <div className='flex flex-col gap-2 items-center justify-center w-full'>
-          <div className='flex items-center justify-center h-[112px] w-[112px]'>
-            <a
+          <div className='flex items-center justify-center h-[200px] w-[200px] rounded-full border-slate-400  dark:border-slate-200 border-2 p-1'>
+            <Link
               href={`https://github.com/${data.login}`}
               target='blank'
             >
               <Image
                 unoptimized
-                priority
                 src={`https://github.com/${data.login}.png`}
                 alt={data.name}
-                width={112}
-                height={112}
+                className='object-cover rounded-full'
+                width={200}
+                height={200}
+                priority
               />
-            </a>
+            </Link>
           </div>
-          <div>
-            <a
+          <div className='mb-4'>
+            <Link
               href="https://instagram.com/luankisaki.dev/"
               className='font-medium text-base'
               target='blank'
             >
               @luankisaki.dev
-            </a>
+            </Link>
           </div>
           {/* Links */}
           <div className='p-6 gap-4 w-full overflow-x-auto scrollbar h-60 lg:w-1/3'>
