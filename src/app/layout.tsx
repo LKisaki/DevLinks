@@ -18,8 +18,6 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${inter.className} dark:bg-gradient-to-b dark:from-gray-950 dark:to-gray-800 dark:text-white max-w-screen min-h-screen`}>
-        <div className='mx-4 my-2'>
-        </div>
         {children}
         <Analytics />
       </body>
